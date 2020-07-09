@@ -1,0 +1,25 @@
+body{
+    font-family: "Russo One";
+    background-color: #171717;
+    /* background: url("https://w.wallhaven.cc/full/d5/wallhaven-d55yqm.png") ; */
+    
+    background-repeat: round;
+    color: rgb(87, 86, 86);
+  
+}
+
+.navbar{
+    margin-bottom: 30px;
+}
+ 
+ 
+#footer div.card{
+    font-family: "Montserrat Alternates";
+    /* height: 13em; */
+    background-color: #171717;
+    background: radial-gradient(circle, rgba(4,4,4,1) 0%, rgba(4,0,91,1) 100%);
+    color: rgb(122, 161, 194);
+    border: 0px;
+    border-radius: 0px;
+}
+ 

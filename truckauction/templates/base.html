@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Social</title>
+    <!-- Bootstrap, JS, Jquery -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/2d0a5ce7a3.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital@1&family=Russo+One&display=swap" rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark teachfont">
+        <a class="navbar-brand" href="{% url 'index' %}">Truck Square</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item" >
+              <a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" >Hi {{ user.username }}</a>
+            </li>
+            {% else %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'accounts:login' %}">Login<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'accounts:signup' %}">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=" ">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=" ">Link</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+     
+
+    
+    <!-- BODY CONTENT -->
+    {% block content %}
+        <!-- anything outside of this will be inherited -->
+    {% endblock content %}
+    <!-- END CONTENT -->
+      
+
+
+
+
+    <!-- FOOTER CONTENT -->
+    <!-- <div id="footer"  >
+      <div class="card" >
+        <div class="card-footer">
+          
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-4">
+                <h2>Footer</h2>
+              </div>
+              <div class="col-lg-4">
+                <h2>Nothing</h2>
+              </div>
+              <div class="col-lg-4">
+                <h2>Sites</h2>
+              </div>      
+            </div>
+          </div> -->
+
+          <!-- {% block footer_content %} -->
+            <!-- anything outside of this will be inherited -->
+          <!-- {% endblock footer_content %} -->
+          
+        <!-- </div>  
+      </div>
+    </div> -->
+    <!-- END FOOTER CONTENT -->
+
+</body>
+</html>
